@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Condicional</title>
     <style>
         .normal{
             background-color: lightblue;
@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <h1>Condicionais</h1>
+    <h1>(Versão 02)Condicionais</h1>
     <hr>
 
 
@@ -28,7 +28,10 @@
 <?php
 $numero = 10;
 if($numero >= 5){
-    echo"<p>$numero é maior/igual a 5</p>";
+?>
+    <p><?=$numero?> é maior/igual a 5</p>
+
+<?php
 }
 ?>
 
@@ -37,18 +40,30 @@ if($numero >= 5){
 $produto = "Geladeira";
 $qtdEmEstoque = 1; // o que temos no momento
 $qtCritica = 5; // mínimo necessário
-echo "<h3>Produto: $produto</h3>";
-echo "<h4>Estoque: $qtdEmEstoque</h4>";
-if($qtdEmEstoque < $qtCritica){
-    echo"<p class='repor'> Está com baixo estoque</p>";
+?>
 
-    if($qtdEmEstoque == 0){
-        echo"<p><span class='urgente'>URGENTE!</span></p>";
-    }
+<h3>Produto: <?=$produto?></h3>
+<h4>Estoque: <?=$qtdEmEstoque?></h4>
+
+<?php
+if($qtdEmEstoque < $qtCritica){?>
+    <p class="repor"> Está com baixo estoque</p>
+
+ <?php
+if($qtdEmEstoque == 0){
+?>
+
+        <p><span class="urgente">URGENTE!</span></p>
+
+<?php
+}
 }else{
-    echo"<p class='normal'> Está com a quantidade adequada</p>";
+?>
+    <p class="normal"> Está com a quantidade adequada</p>
+<?php
 }
 ?>
+
 
     <h2>Encadeada</h2>
 
@@ -68,8 +83,11 @@ switch($produto){
     case "TV" : $garantia = 2; break;
     default: $garantia = 1; break;
 }
-echo "<p>O $produto tem garantia de $garantia anos</p>";
-
 ?>
+<p>O <?=$produto?> tem garantia de <?=$garantia?> anos</p>
+
+
+
+
 </body>
 </html>
