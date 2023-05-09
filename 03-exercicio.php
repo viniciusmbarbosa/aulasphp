@@ -23,8 +23,8 @@
 elseif($salario <= 3000){
     $novoSalario = ($salario * 1.10);
 ?>
-    <p>Seu salário <?=$salario?>
-    <p>Seu salário foi para <?=$novoSalario?></p>
+    <p>Seu salário <?=number_format($salario, 2, ",", ".")?>
+    <p>Seu salário foi para <?=number_format($novoSalario, 2)?></p>
 <?php
 }
 else{
